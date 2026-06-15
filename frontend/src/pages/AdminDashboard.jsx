@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   // --- FETCH PROJECTS & MESSAGES ---
   const fetchProjects = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/projects");
+      const res = await fetch("https://portfolio-backend-zh1h.onrender.com/api/projects");
       const data = await res.json();
       setProjects(data);
     } catch (error) {
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/messages");
+      const res = await fetch("https://portfolio-backend-zh1h.onrender.com/api/messages");
       const data = await res.json();
       setMessages(data);
     } catch (error) {
@@ -105,7 +105,7 @@ const AdminDashboard = () => {
     toast.dismiss(toastId);
     const loadingToast = toast.loading("Deleting project...");
     try {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+      const res = await fetch(`https://portfolio-backend-zh1h.onrender.com/api/projects/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -151,7 +151,7 @@ const AdminDashboard = () => {
     toast.dismiss(toastId);
     const loadingToast = toast.loading("Deleting message...");
     try {
-      const res = await fetch(`http://localhost:5000/api/messages/${id}`, {
+      const res = await fetch(`https://portfolio-backend-zh1h.onrender.com/api/messages/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -237,8 +237,8 @@ const AdminDashboard = () => {
       };
 
       const url = editId
-        ? `http://localhost:5000/api/projects/${editId}`
-        : "http://localhost:5000/api/projects";
+        ? `https://portfolio-backend-zh1h.onrender.com/api/projects/${editId}`
+        : "https://portfolio-backend-zh1h.onrender.com/api/projects";
       const method = editId ? "PUT" : "POST";
 
       const response = await fetch(url, {
