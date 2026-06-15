@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="flex gap-3">
             {/* GitHub */}
             <a
-              href="#"
+              href="https://github.com/UsamaShafaqat-Dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg bg-cardBg border border-gray-800 hover:border-primary/50 shadow-sm"
@@ -68,7 +68,7 @@ const Footer = () => {
             </a>
             {/* LinkedIn */}
             <a
-              href="#"
+              href="https://www.linkedin.com/in/usama-shafaqat/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#0077b5] transition-colors p-2 rounded-lg bg-cardBg border border-gray-800 hover:border-primary/50 shadow-sm"
