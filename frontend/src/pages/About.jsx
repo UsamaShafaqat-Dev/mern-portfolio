@@ -14,7 +14,7 @@ const About = () => {
           <div className="w-full md:w-1/3">
              <div className="w-full aspect-[4/5] bg-gray-900 rounded-2xl border-2 border-gray-800 flex items-center justify-center overflow-hidden relative group">
                 <img 
-                  src="/usama_hero.jpg" 
+                  src="/image.png" 
                   alt="Usama Shafaqat" 
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0" 
                 />
