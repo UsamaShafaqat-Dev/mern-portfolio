@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const AdminDashboard = () => {
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem("adminToken");
     if (!token) {
       toast.error("Please login to access the dashboard.");
-      navigate("/login"); // Agar token nahi hai toh login pe bhejo
+      navigate("/login");
       return;
     }
     fetchProjects();
@@ -45,7 +45,9 @@ const AdminDashboard = () => {
   // --- FETCH PROJECTS & MESSAGES ---
   const fetchProjects = async () => {
     try {
-      const res = await fetch("https://portfolio-backend-zh1h.onrender.com/api/projects");
+      const res = await fetch(
+        "https://portfolio-backend-zh1h.onrender.com/api/projects",
+      );
       const data = await res.json();
       setProjects(data);
     } catch (error) {
@@ -55,7 +57,9 @@ const AdminDashboard = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch("https://portfolio-backend-zh1h.onrender.com/api/messages");
+      const res = await fetch(
+        "https://portfolio-backend-zh1h.onrender.com/api/messages",
+      );
       const data = await res.json();
       setMessages(data);
     } catch (error) {
@@ -105,9 +109,12 @@ const AdminDashboard = () => {
     toast.dismiss(toastId);
     const loadingToast = toast.loading("Deleting project...");
     try {
-      const res = await fetch(`https://portfolio-backend-zh1h.onrender.com/api/projects/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://portfolio-backend-zh1h.onrender.com/api/projects/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
       if (res.ok) {
         toast.success("Project deleted successfully!", { id: loadingToast });
         fetchProjects();
@@ -151,9 +158,12 @@ const AdminDashboard = () => {
     toast.dismiss(toastId);
     const loadingToast = toast.loading("Deleting message...");
     try {
-      const res = await fetch(`https://portfolio-backend-zh1h.onrender.com/api/messages/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://portfolio-backend-zh1h.onrender.com/api/messages/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
       if (res.ok) {
         toast.success("Message deleted successfully!", { id: loadingToast });
         fetchMessages();
@@ -521,7 +531,7 @@ const AdminDashboard = () => {
             </>
           )}
 
-          {/* TAB 2: MESSAGES */}
+          {/* TAB 2: MESSAGES (UPDATED WITH BUDGET & PROJECT TYPE) */}
           {activeTab === "messages" && (
             <div>
               <div className="flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
@@ -558,7 +568,7 @@ const AdminDashboard = () => {
                       className="bg-background border border-gray-800 p-6 rounded-2xl flex flex-col md:flex-row gap-4 justify-between items-start hover:border-gray-600 transition-colors shadow-md group"
                     >
                       <div className="flex-1 w-full">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
                           <h4 className="text-lg font-bold text-white">
                             {msg.name}
                           </h4>
@@ -572,6 +582,23 @@ const AdminDashboard = () => {
                             {new Date(msg.createdAt).toLocaleString()}
                           </span>
                         </div>
+
+                        {/* New Fields: Project Type & Budget Badges */}
+                        {(msg.projectType || msg.budget) && (
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {msg.projectType && (
+                              <span className="bg-blue-900/30 text-blue-400 border border-blue-800/50 px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider">
+                                {msg.projectType}
+                              </span>
+                            )}
+                            {msg.budget && (
+                              <span className="bg-green-900/30 text-green-400 border border-green-800/50 px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider">
+                                Budget: {msg.budget}
+                              </span>
+                            )}
+                          </div>
+                        )}
+
                         <div className="bg-cardBg p-4 rounded-xl border border-gray-800/50 relative">
                           <svg
                             className="absolute top-3 left-3 w-4 h-4 text-gray-600"

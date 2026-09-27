@@ -20,9 +20,8 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      // NOTE: Make sure your backend API handles 'projectType' and 'budget'
       const res = await fetch(
-        "https://portfolio-backend-zh1h.onrender.com/api/contact",
+        "https://portfolio-backend-zh1h.onrender.com/api/messages",
         {
           method: "POST",
           headers: {
@@ -183,12 +182,18 @@ const Contact = () => {
                 <option value="" disabled hidden>
                   Project Type
                 </option>
+                <option value="Full Stack Website">Full Stack Website</option>
+                <option value="Custom Software / ERP">
+                  Custom Software / ERP
+                </option>
+                <option value="Management System">Management System</option>
                 <option value="MERN Stack Web App">MERN Stack Web App</option>
                 <option value="Flutter Mobile App">Flutter Mobile App</option>
+                <option value="API Development">API Development</option>
+                <option value="E-commerce Store">E-commerce Store</option>
                 <option value="Landing Page / Portfolio">
                   Landing Page / Portfolio
                 </option>
-                <option value="E-commerce Store">E-commerce Store</option>
                 <option value="Other">Other</option>
               </select>
 
@@ -202,9 +207,11 @@ const Contact = () => {
                 <option value="" disabled hidden>
                   Estimated Budget
                 </option>
-                <option value="Less than $500">Less than $500</option>
+                <option value="$100 - $300">$100 - $300</option>
+                <option value="$300 - $500">$300 - $500</option>
                 <option value="$500 - $1,000">$500 - $1,000</option>
-                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                <option value="$3,000 - $5,000">$3,000 - $5,000</option>
                 <option value="$5,000+">$5,000+</option>
               </select>
             </div>
