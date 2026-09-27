@@ -9,7 +9,9 @@ const FeaturedProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("https://portfolio-backend-zh1h.onrender.com/api/projects");
+        const res = await fetch(
+          "https://portfolio-backend-zh1h.onrender.com/api/projects",
+        );
         const data = await res.json();
         setProjects(data);
       } catch (error) {
@@ -21,6 +23,15 @@ const FeaturedProjects = () => {
 
     fetchProjects();
   }, []);
+
+  // Yeh helper function URL ko theek karega taaki wo hamesha external tab mein khule
+  const formatUrl = (url) => {
+    if (!url) return "#";
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      return `https://${url}`;
+    }
+    return url;
+  };
 
   return (
     <section className="px-8 py-12 w-full max-w-7xl mx-auto">
@@ -98,7 +109,7 @@ const FeaturedProjects = () => {
               <div className="flex justify-between items-center border-t border-gray-800 pt-4 mt-auto">
                 {project.liveLink ? (
                   <a
-                    href={project.liveLink}
+                    href={formatUrl(project.liveLink)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-300 hover:text-white flex items-center gap-2 transition-colors"
@@ -124,7 +135,7 @@ const FeaturedProjects = () => {
 
                 {project.githubLink ? (
                   <a
-                    href={project.githubLink}
+                    href={formatUrl(project.githubLink)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-300 hover:text-white flex items-center gap-2 transition-colors"
