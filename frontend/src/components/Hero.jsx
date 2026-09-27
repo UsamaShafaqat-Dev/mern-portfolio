@@ -97,7 +97,7 @@ const Hero = () => {
         <div className="w-[300px] h-[400px] md:w-[350px] md:h-[450px] bg-cardBg rounded-[2rem] border border-gray-800 flex items-center justify-center overflow-hidden z-10 relative shadow-2xl">
           {/* 👇 Aapki Pic yahan adjust ki ha */}
           <img
-            src="/usama_hero.jpg"
+            src="/image.png"
             alt="Usama Shafaqat"
             className="w-full h-full object-cover object-top"
           />
