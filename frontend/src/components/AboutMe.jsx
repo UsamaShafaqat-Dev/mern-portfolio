@@ -12,7 +12,7 @@ const AboutMe = () => {
           <div className="w-48 h-48 md:w-56 md:h-56 lg:w-full lg:h-auto lg:aspect-square bg-background border border-gray-800 rounded-[2rem] p-3 shadow-inner group overflow-hidden">
             {/* Note: Make sure 'usama_pic.jpg' exists in your /public folder */}
             <img
-              src="/usama_hero.jpg"
+              src="/image.png"
               alt="Usama Shafaqat"
               className="w-full h-full object-cover object-top rounded-[1.5rem] opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
             />
