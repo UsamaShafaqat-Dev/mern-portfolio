@@ -10,13 +10,21 @@ const messageSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    projectType: {
+      type: String,
+      required: true, // Naya field
+    },
+    budget: {
+      type: String,
+      required: true, // Naya field
+    },
     message: {
       type: String,
       required: true,
     },
     serviceRequired: {
       type: String,
-      required: false, // Isey explicitly optional rakha hai taake query pass ho jaye
+      required: false,
     },
   },
   { timestamps: true },
