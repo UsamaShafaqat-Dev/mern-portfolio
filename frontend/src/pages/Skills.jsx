@@ -26,6 +26,8 @@ const Skills = () => {
       skills: [
         "Git & GitHub",
         "Visual Studio Code",
+        "Hostinger (VPS & Web)",
+        "Bluehost (VPS)",
         "Render",
         "Vercel",
         "Postman",
