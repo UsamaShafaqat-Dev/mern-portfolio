@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const AboutMe = () => {
+  const [projectCount, setProjectCount] = useState(5); // Default 5 show karega jab tak data load ho
+
+  useEffect(() => {
+    const fetchProjectCount = async () => {
+      try {
+        const res = await fetch(
+          "https://portfolio-backend-zh1h.onrender.com/api/projects",
+        );
+        const data = await res.json();
+        // Agar projects aa gaye hain toh unki tadaad (length) set kar do
+        if (data && data.length > 0) {
+          setProjectCount(data.length);
+        }
+      } catch (error) {
+        console.error("Projects count load karne mein masla aaya:", error);
+      }
+    };
+
+    fetchProjectCount();
+  }, []);
+
   return (
     <section className="px-8 py-16 w-full max-w-7xl mx-auto">
       <div className="bg-cardBg border border-gray-800 rounded-[2rem] p-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-14 shadow-2xl relative overflow-hidden group">
@@ -49,24 +70,30 @@ const AboutMe = () => {
 
         {/* Right Side: Stats Grid */}
         <div className="lg:w-1/4 w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-5 bg-background border border-gray-800 p-6 rounded-[1.5rem] shadow-inner mt-8 lg:mt-0">
+          {/* 👇 Dynamic Project Count */}
           <div className="flex flex-col items-center justify-center text-center border border-gray-800 bg-cardBg p-5 rounded-2xl shadow-md transition-colors hover:border-primary/50">
-            <h3 className="text-3xl font-bold text-primary mb-1.5">5+</h3>
+            <h3 className="text-3xl font-bold text-primary mb-1.5">
+              {projectCount}+
+            </h3>
             <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
               Projects Completed
             </p>
           </div>
+
           <div className="flex flex-col items-center justify-center text-center border border-gray-800 bg-cardBg p-5 rounded-2xl shadow-md transition-colors hover:border-primary/50">
             <h3 className="text-3xl font-bold text-primary mb-1.5">5+</h3>
             <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
               Happy Clients
             </p>
           </div>
+
           <div className="flex flex-col items-center justify-center text-center border border-gray-800 bg-cardBg p-5 rounded-2xl shadow-md transition-colors hover:border-primary/50">
             <h3 className="text-3xl font-bold text-primary mb-1.5">1+</h3>
             <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
               Years Experience
             </p>
           </div>
+
           <div className="flex flex-col items-center justify-center text-center border border-gray-800 bg-cardBg p-5 rounded-2xl shadow-md transition-colors hover:border-primary/50">
             <h3 className="text-3xl font-bold text-primary mb-1.5">100%</h3>
             <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
