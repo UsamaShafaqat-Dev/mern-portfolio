@@ -8,7 +8,6 @@ const Hero = () => {
       <div className="w-full lg:w-1/2 flex flex-col items-start gap-6 mt-12 lg:mt-0">
         <h3 className="text-xl text-gray-300 font-medium">Hi, I'm</h3>
 
-        {/* Updated Name to USAMA SHAFAQAT */}
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">
           USAMA
           <br />
@@ -62,7 +61,6 @@ const Hero = () => {
         <div className="flex items-center gap-6 mt-8">
           <span className="text-gray-400 text-sm">Follow me</span>
           <div className="flex gap-4">
-            {/* GitHub */}
             <a
               href="https://github.com/UsamaShafaqat-Dev"
               target="_blank"
@@ -73,7 +71,6 @@ const Hero = () => {
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/usama-shafaqat/"
               target="_blank"
@@ -88,22 +85,19 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right Column: Image & Badges (Updated) */}
+      {/* Right Column: Image & Badges */}
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mt-16 lg:mt-0">
-        {/* Glow Background Effect */}
         <div className="absolute top-1/2 left-1/2 lg:left-[60%] -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-primary/15 rounded-full blur-[100px] -z-10"></div>
 
-        {/* Image Container */}
-        <div className="w-[300px] h-[400px] md:w-[350px] md:h-[450px] bg-cardBg rounded-[2rem] border border-gray-800 flex items-center justify-center overflow-hidden z-10 relative shadow-2xl">
-          {/* 👇 Aapki Pic yahan adjust ki ha */}
+        {/* Image Container with Bluish blend */}
+        <div className="w-[300px] h-[400px] md:w-[350px] md:h-[450px] bg-primary/10 rounded-[2rem] border border-gray-800 flex items-center justify-center overflow-hidden z-10 relative shadow-2xl">
           <img
             src="/image.png"
             alt="Usama Shafaqat"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top mix-blend-lighten"
           />
         </div>
 
-        {/* Floating Badge 1: Experience (Adjusted position to look good with pic) */}
         <div className="absolute top-5 -left-4 md:-left-10 lg:left-0 bg-cardBg/90 backdrop-blur-sm border border-gray-800 p-4 rounded-2xl flex flex-col items-center shadow-2xl z-20 transition-transform hover:scale-105">
           <span className="text-primary mb-2 bg-primary/10 p-2 rounded-lg">
             <svg
@@ -130,7 +124,6 @@ const Hero = () => {
           </span>
         </div>
 
-        {/* Floating Badge 2: Available (Adjusted position) */}
         <div className="absolute bottom-8 -right-4 lg:-right-6 bg-cardBg/90 backdrop-blur-sm border border-gray-800 px-5 py-3 rounded-full flex items-center gap-3 shadow-2xl z-20">
           <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
           <span className="text-gray-300 text-sm font-medium">
